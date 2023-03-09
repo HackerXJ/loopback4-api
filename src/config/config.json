@@ -1,0 +1,75 @@
+{
+  "isbmmDB": {
+    "name": "isbmmDB",
+    "connector": "postgresql",
+    "url": "",
+    "host": "postgresql datasource ip",
+    "port": "postgresql datasource port",
+    "user": "username",
+    "password": "password",
+    "database": "database"
+  },
+  "es": {
+    "name": "ElasticSearch",
+    "connector": "rest",
+    "debug": true,
+    "operations": [
+      {
+        "template": {
+          "method": "POST",
+          "url": "es url",
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json"
+          },
+          "body": "{query}"
+        },
+        "functions": {
+          "get3Color": [
+            "query"
+          ]
+        }
+      }
+    ]
+  },
+  "kafka": {
+    "kafka2": false,
+    "registryHost": "kafka registryHost",
+    "dmcProducer": {
+      "kafkaHost": "kafkaHost",
+      "topic": "kafka topic",
+      "username": "username",
+      "password": "password"
+    }
+  },
+  "ftp": {
+    "host": "ftp host",
+    "path": "ftp path",
+    "user": "username",
+    "password": "password"
+  },
+  "minio": {
+    "client": {
+      "endPoint": "minio  url",
+      "useSSL": false,
+      "accessKey": "username",
+      "secretKey": "password"
+    },
+    "bucketName": {
+      "Video": "video",
+      "Image": "image"
+    }
+  },
+  "upload_model": {
+    "entry_area": "minio model"
+  },
+  "email_config": {
+    "host": "email host",
+    "port": "email port",
+    "secureConnection": true,
+    "auth": {
+      "user": "username",
+      "pass": "password"
+    }
+  }
+}
